@@ -1,10 +1,10 @@
 import React from 'react';
-import DrawerNav from './Navegadores/DrawerNav.js';
+import InicioNavegacion from './Componentes/InicioNavegacion.js';
 
 export default class App extends React.Component{
   render(){
     return(
-      <DrawerNav />
+      <InicioNavegacion />
     )
   }
 }

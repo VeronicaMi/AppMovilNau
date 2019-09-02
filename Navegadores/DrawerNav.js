@@ -51,6 +51,7 @@ class NavigationDrawerStructure extends Component {
 }
 
 const Home_StackNavigator = createStackNavigator({
+  
   //All the screen from the Screen1 will be indexed here
   First: {
     screen: Home,
@@ -272,8 +273,7 @@ const DrawerNavigatorExample = createDrawerNavigator({
     },
 
 });
-
-const DrawerNav = createAppContainer(DrawerNavigatorExample);
-
-export default DrawerNav;
+DrawerNavigatorExample.navigationOptions = {header: null};
+//const DrawerNav = createAppContainer(DrawerNavigatorExample);
+export default DrawerNavigatorExample;
 
