@@ -14,7 +14,7 @@ export default class OpcionEmergencia extends Component{
         return(
             <View style = {styles.container}>
                 <View style = {styles.contIcon}>
-                    <TouchableOpacity onPress = {() => alert('Chinga tu madre')}>
+                    <TouchableOpacity onPress = {() => alert('Llamada al 911')}>
                         <Image
                             style = {styles.imagePhone}
                             source = {require('../ImageNav/call.png')}
@@ -23,7 +23,7 @@ export default class OpcionEmergencia extends Component{
                         <Text style = {styles.textPhone}>Llamar al 911</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress = {() => alert('Picate la cola')}>
+                    <TouchableOpacity onPress = {() => alert('Activaste el chat')}>
                         <Image
                             style = {styles.imageChat}
                             source = {require('../ImageNav/chat.png')}

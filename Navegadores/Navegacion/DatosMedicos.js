@@ -9,6 +9,13 @@ import {
     TextInput
 } from 'react-native';
 //import Encabezado from '../Secciones/Encabezado.js'
+import RadioForm, { RadioButton } from 'react-native-simple-radio-button';
+
+
+var DonanteOrganos = [
+    {label: 'Si', value: 0 },
+    {label: 'No', value: 1 }
+  ];
 
 export default class DatosMedicos extends Component{
     
@@ -22,7 +29,6 @@ export default class DatosMedicos extends Component{
             SuministroMedico: '',
             Peso: '',
             Talla: '',
-            DonanteOrganos: '',
         };
     };
     
@@ -31,9 +37,6 @@ export default class DatosMedicos extends Component{
         return(
             <ScrollView>
                 <View style = {styles.container}>
-                    <Text>Hola cara de bola Datos Medicos</Text>
-                    
-                    <Text style = {styles.titulo}> Datos Medicos </Text>
                     <Text style = {styles.label}> Grupo Sanguineo </Text>
                         <TextInput
                             style = {styles.input}
@@ -93,11 +96,13 @@ export default class DatosMedicos extends Component{
                         />
 
                     <Text style = {styles.label}> Donante de Organos </Text>
-                        <TextInput
-                            style = {styles.input}
-                            placeholder = 'Si'
-                            onChangeText = {(text) => this.setState({DonanteOrganos: text})}
-                            value = {this.state.DonanteOrganos}
+                        <RadioForm
+                            style={styles.donante}
+                            radio_props={DonanteOrganos}
+                            initial={0}
+                            formHorizontal={true}
+                            labelHorizontal={true}
+                            onPress={(value) => {this.setState({value:value})}}
                         />
 
                     <View style = {styles.button}>
@@ -128,16 +133,24 @@ const styles = StyleSheet.create({
     },
 
     label:{
+        marginTop: 25,
         fontSize: 18,
         paddingLeft: 40,
     },
 
     input:{
-        margin:15,
+        margin:10,
         marginLeft: 40,
         borderBottomWidth: 3,
         borderBottomColor: 'green',
         width: 290,
+    },
+
+    donante:{
+        marginLeft: 10,
+        paddingTop: 20,
+        paddingBottom: 20,
+        justifyContent: 'space-evenly'
     },
 
     button:{

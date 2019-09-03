@@ -7,6 +7,10 @@ import {
 } from 'react-native';
 
 export default class AvisoPrivacidad extends Component{
+    static navigationOptions = {
+        title: 'Aviso de Privacidad'
+    }
+
     render(){
         return(
             <View style = {styles.container}>

@@ -6,6 +6,7 @@ import {
     CheckBox
 } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
+//npm i react-native-app-intro-slider --save
 
 export default class Slider extends Component{
     constructor(props) {

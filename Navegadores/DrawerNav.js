@@ -174,7 +174,7 @@ const TerCon_StackNavigator = createStackNavigator({
   Eighth: {
     screen: TermCond,
     navigationOptions: ({ navigation }) => ({
-      title: 'Terminos y condiciones',
+      title: 'Términos y condiciones',
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
 
       headerStyle: {
@@ -261,7 +261,7 @@ const DrawerNavigatorExample = createDrawerNavigator({
     TermCond: {
       screen: TerCon_StackNavigator,
       navigationOptions:{
-        drawerLabel: 'Terminos y condiciones',
+        drawerLabel: 'Términos y condiciones',
       },
     },
 

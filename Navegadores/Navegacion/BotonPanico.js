@@ -24,8 +24,9 @@ export default class BotonPanico extends Component{
 
     render(){
         return(
-            <View style = {styles.container}>
-                 <Text style = {styles.label}> Emergencia Medica </Text>
+            <ScrollView>
+                <View style = {styles.container}>
+                 <Text style = {styles.label}> Emergencia Médica </Text>
 
                     <Picker 
                             style = {styles.compañia}
@@ -33,10 +34,10 @@ export default class BotonPanico extends Component{
                             <Picker.Item label = 'Paro Cardiaco' value = 'paro cardiaco'/>
                             <Picker.Item label = 'Desmayo' value = 'desmayo'/>
                             <Picker.Item label = 'Convulsiones' value = 'convulsiones'/>
-                            <Picker.Item label = 'Ser Carlos' value = 'ser carlos'/>
+                            <Picker.Item label = 'Ahogado' value = 'ahogado'/>
                     </Picker>
 
-                    <Text style = {styles.label}> Emergencia Policial </Text>
+                    <Text style = {styles.label}> Emergencia Polícial </Text>
 
                     <Picker 
                             style = {styles.compañia}
@@ -47,7 +48,7 @@ export default class BotonPanico extends Component{
                             <Picker.Item label = 'Violencia fisica' value = 'violencia fisica'/>
                     </Picker>
 
-                    <Text style = {styles.label}> Emergencia Protección Civil </Text>
+                    <Text style = {styles.label}> Emergencia Protección Cívil </Text>
 
                     <Picker 
                             style = {styles.compañia}
@@ -59,11 +60,16 @@ export default class BotonPanico extends Component{
                     </Picker>
 
                     <View style = {styles.button}>
-                        <TouchableOpacity style = {styles.buttonStyle}>
+                        <TouchableOpacity style = {styles.buttonStyle} 
+                            onPress={() => alert('Hola')}>
                             <Text style = {styles.buttonText}>GUARDAR</Text>
                         </TouchableOpacity>
                     </View>
+
+                    
             </View>
+            </ScrollView>
+
         );
     }
 }
@@ -75,12 +81,14 @@ const styles = StyleSheet.create({
     },
 
     compañia:{
+        
         marginLeft: 36,
         fontSize: 18,
         
     },
 
     label:{
+        marginTop: 25,
         fontSize: 18,
         paddingLeft: 40,
     },
