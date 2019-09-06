@@ -11,8 +11,10 @@ export default class Contactos extends Component {
         };
     };
 
+    
    
     render(){
+        let display = this.state.Nombre;
         return(
             <ScrollView>
                 <View style = {styles.container}>
@@ -43,9 +45,10 @@ export default class Contactos extends Component {
 
                         <View style = {styles.button}>
                         <TouchableOpacity style = {styles.buttonStyle} 
-                            onPress={() => alert('HOLAAAA!')}>
+                            onPress={() => alert('hola')}>
                             <Text style = {styles.buttonText}>GUARDAR</Text>
                         </TouchableOpacity>
+
                     </View>
 
                 </View>

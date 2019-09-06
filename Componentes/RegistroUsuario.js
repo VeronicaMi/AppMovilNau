@@ -51,6 +51,15 @@ export default class RegistroUsuario extends Component{
         })
     }
 
+    confirmaEmail = () => {
+        if ( this.state.Email !== this.state.ConfirEmail){
+            Alert.alert('El correo no coincide')
+            
+        }
+    }
+
+    abreNav = () => {this.props.navigation.navigate('DrawerNav')}
+
     render(){
         return(
             <ScrollView>
@@ -210,7 +219,7 @@ export default class RegistroUsuario extends Component{
 
                     <View style = {styles.button}>
                         <TouchableOpacity style = {styles.buttonStyle} 
-                            onPress={() => this.props.navigation.navigate('DrawerNav')}>
+                            onPress={() => {this.confirmaEmail(); this.abreNav();}}>
                             <Text style = {styles.buttonText}>ENVIAR</Text>
                         </TouchableOpacity>
                     </View>
