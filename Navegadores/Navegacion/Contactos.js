@@ -11,14 +11,13 @@ export default class Contactos extends Component {
         };
     };
 
+    
    
     render(){
+        let display = this.state.Nombre;
         return(
             <ScrollView>
                 <View style = {styles.container}>
-                    <Text>Hola cara de bola Contactos</Text>
-
-                    <Text style = {styles.titulo}> Contactos de emergencia </Text>
                         <Text style = {styles.label}> Nombre  </Text>
                             <TextInput
                                 style = {styles.input}
@@ -46,9 +45,10 @@ export default class Contactos extends Component {
 
                         <View style = {styles.button}>
                         <TouchableOpacity style = {styles.buttonStyle} 
-                            onPress={() => alert('HOLAAAA!')}>
+                            onPress={() => alert('hola')}>
                             <Text style = {styles.buttonText}>GUARDAR</Text>
                         </TouchableOpacity>
+
                     </View>
 
                 </View>
@@ -67,16 +67,17 @@ export default class Contactos extends Component {
         fontSize: 28,
         justifyContent: 'center',
         paddingLeft: 30,
-        margin: 5,
+        
     },
 
     label:{
+        marginTop: 25,
         fontSize: 18,
         paddingLeft: 40,
     },
 
     input:{
-        margin:15,
+        margin:10,
         marginLeft: 40,
         borderBottomWidth: 3,
         borderBottomColor: 'green',

@@ -51,6 +51,15 @@ export default class RegistroUsuario extends Component{
         })
     }
 
+    confirmaEmail = () => {
+        if ( this.state.Email !== this.state.ConfirEmail){
+            Alert.alert('El correo no coincide')
+            
+        }
+    }
+
+    abreNav = () => {this.props.navigation.navigate('DrawerNav')}
+
     render(){
         return(
             <ScrollView>
@@ -63,6 +72,7 @@ export default class RegistroUsuario extends Component{
                         <TextInput
                             style = {styles.input}
                             placeholder = '5528980930'
+                            keyboardType = 'numeric'
                             onChangeText = {(text) => this.setState({NumeroCelular: text})}
                             value = {this.state.NumeroCelular}
                         />
@@ -80,35 +90,35 @@ export default class RegistroUsuario extends Component{
                     <Text style = {styles.label}> Nombre(s)</Text>
                         <TextInput
                             style = {styles.input}
-                            placeholder = 'F'
+                            placeholder = 'Veronica'
                             onChangeText = {(text) => this.setState({Nombre: text})}
                             value = {this.state.Nombre}
                         />
                     <Text style = {styles.label}> Apellido Paterno</Text>
                         <TextInput
                             style = {styles.input}
-                            placeholder = 'F'
+                            placeholder = 'Miranda'
                             onChangeText = {(text) => this.setState({ApellidoPaterno: text})}
                             value = {this.state.ApellidoPaterno}
                         />
                     <Text style = {styles.label}> Apellido Materno</Text>
                         <TextInput
                             style = {styles.input}
-                            placeholder = 'F'
+                            placeholder = 'Ramirez'
                             onChangeText = {(text) => this.setState({ApellidoMaterno: text})}
                             value = {this.state.ApellidoMaterno}
                         />
                     <Text style = {styles.label}> Correo electronico</Text>
                         <TextInput
                             style = {styles.input}
-                            placeholder = 'F'
+                            placeholder = 'veronica@escom.mx'
                             onChangeText = {(text) => this.setState({Email: text})}
                             value = {this.state.Email}
                         />
                     <Text style = {styles.label}> Confirma tu correo electronico</Text>
                         <TextInput
                             style = {styles.input}
-                            placeholder = 'F'
+                            placeholder = 'veronica@escom.mx'
                             onChangeText = {(text) => this.setState({ConfirEmail: text})}
                             value = {this.state.ConfirEmail}
                         />
@@ -148,7 +158,7 @@ export default class RegistroUsuario extends Component{
                     <Text style = {styles.label}> Calle(s)</Text>
                         <TextInput
                             style = {styles.input}
-                            placeholder = 'F'
+                            placeholder = 'San Pedro'
                             onChangeText = {(text) => this.setState({Calle: text})}
                             value = {this.state.Calle}
                         />
@@ -156,7 +166,7 @@ export default class RegistroUsuario extends Component{
                     <Text style = {styles.label}> No. Exterior</Text>
                         <TextInput
                             style = {styles.input}
-                            placeholder = 'F'
+                            placeholder = '36'
                             onChangeText = {(text) => this.setState({NoExterior: text})}
                             value = {this.state.NoExterior}
                         />
@@ -164,7 +174,7 @@ export default class RegistroUsuario extends Component{
                     <Text style = {styles.label}> No. Interior</Text>
                         <TextInput
                             style = {styles.input}
-                            placeholder = 'F'
+                            placeholder = '4-A'
                             onChangeText = {(text) => this.setState({NoInterior: text})}
                             value = {this.state.NoInterior}
                         />
@@ -172,7 +182,7 @@ export default class RegistroUsuario extends Component{
                     <Text style = {styles.label}> Colonia </Text>
                         <TextInput
                             style = {styles.input}
-                            placeholder = 'F'
+                            placeholder = 'Anzures'
                             onChangeText = {(text) => this.setState({Colonia: text})}
                             value = {this.state.Colonia}
                         />
@@ -180,7 +190,8 @@ export default class RegistroUsuario extends Component{
                     <Text style = {styles.label}> Codigo Postal </Text>
                         <TextInput
                             style = {styles.input}
-                            placeholder = 'F'
+                            placeholder = '59874'
+                            keyboardType = 'numeric'
                             onChangeText = {(text) => this.setState({CodigoPostal: text})}
                             value = {this.state.CodigoPostal}
                         />
@@ -208,7 +219,7 @@ export default class RegistroUsuario extends Component{
 
                     <View style = {styles.button}>
                         <TouchableOpacity style = {styles.buttonStyle} 
-                            onPress={() => this.props.navigation.navigate('DrawerNav')}>
+                            onPress={() => {this.confirmaEmail(); this.abreNav();}}>
                             <Text style = {styles.buttonText}>ENVIAR</Text>
                         </TouchableOpacity>
                     </View>

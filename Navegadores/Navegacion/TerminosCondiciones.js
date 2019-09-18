@@ -7,6 +7,10 @@ import {
 } from 'react-native';
 
 export default class TerminosCondiciones extends Component{
+    static navigationOptions = {
+        title: 'Términos y Condiciones'
+    }
+
     render(){
         return(
             <View style = {styles.container}>

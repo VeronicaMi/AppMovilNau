@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
-    StyleSheet, Text, View, TextInput,
-    TouchableOpacity, Button, Alert,
-    Picker, AsyncStorage, ScrollView,
-    CheckBox
+    StyleSheet,
 } from 'react-native';
+
 import AppIntroSlider from 'react-native-app-intro-slider';
 //npm i react-native-app-intro-slider --save
+//import { View } from 'react-native-animatable';
+import DrawerNav from '../Navegadores/DrawerNav.js';
 
-export default class Slider extends Component{
+export default class Portada extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -16,31 +16,26 @@ export default class Slider extends Component{
           //To show the main page of the app
         };
       }
-    
-    static navigationOptions = {
-        header: null,
-    }
 
-    _onDone = () => {
+      _onDone = () => {
         // After user finished the intro slides. Show real app through
         // navigation or simply by controlling state
-        this.props.navigation.navigate('RegistroUsuario');
+        this.setState({ showRealApp: true });
       };
       _onSkip = () => {
         // After user skip the intro slides. Show real app through
         // navigation or simply by controlling state
-        this.props.navigation.navigate('RegistroUsuario');
-      };    
+        this.setState({ showRealApp: true });
 
+      };
     render(){
+        //const { navigate } = this.props.navigation;
          //If false show the Intro Slides
-         if (this.state.showRealApp) {
+            if (this.state.showRealApp) {
             //Real Application
         return(
-            <TouchableOpacity  onPress = {() => this.props.navigation.navigate('RegistroUsuario')}>
-                <Text style= {{color: 'red', margin : 150, fontSize: 36}}>Envia</Text>
-            </TouchableOpacity>
-        );
+          <DrawerNav/>
+      );
     }
     else {
         //Intro slides

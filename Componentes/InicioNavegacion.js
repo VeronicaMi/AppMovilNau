@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import {
-    StyleSheet, Text, View, TextInput,
-    TouchableOpacity, Button, Alert,
-    Picker, AsyncStorage, ScrollView,
-    CheckBox
-} from 'react-native';
+
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Slider from './Slider.js';
 import RegistroUsuario from './RegistroUsuario.js';
