@@ -29,6 +29,7 @@ import TermCond from './Navegacion/TerminosCondiciones.js';
 import AvisoPrivacidad from './Navegacion/AvisoPrivacidad.js';
 
 
+
 //Navigation Drawer Structure for all screen
 class NavigationDrawerStructure extends Component {
   //Structure for the navigatin Drawer
@@ -273,6 +274,10 @@ const DrawerNavigatorExample = createDrawerNavigator({
     },
 
 });
+
+
+
+
 DrawerNavigatorExample.navigationOptions = {header: null};
 //const DrawerNav = createAppContainer(DrawerNavigatorExample);
 export default DrawerNavigatorExample;
