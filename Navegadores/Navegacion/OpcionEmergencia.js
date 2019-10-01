@@ -14,7 +14,8 @@ export default class OpcionEmergencia extends Component{
         return(
             <View style = {styles.container}>
                 <View style = {styles.contIcon}>
-                    <TouchableOpacity onPress = {() => this.props.onPressCall()}>
+                    <TouchableOpacity 
+                        onPress = {() => this.props.onPressCall()}>
                         <Image
                             style = {styles.imagePhone}
                             source = {require('../ImageNav/call.png')}

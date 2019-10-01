@@ -9,6 +9,10 @@ import {createStackNavigator} from 'react-navigation';
 import Chat from './Chat.js';
 
 class EmergenciaMedicaView extends Component {
+    static navigationOptions = {
+        header: null,
+    }
+
    render(){
         return(
             <View style = {styles.container}>

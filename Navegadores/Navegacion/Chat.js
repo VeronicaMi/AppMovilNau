@@ -17,7 +17,7 @@ import Meteor, {
 
 
 /** Connect to server.*/
-Meteor.connect("ws://10.0.0.9:3000/websocket");
+Meteor.connect("ws://10.0.0.29:3000/websocket");
 
 class Chat extends Component{
     constructor(props){
@@ -29,7 +29,7 @@ class Chat extends Component{
     };
 
     insert () {
-        const mssg = {
+        const mssg = { 
           usuario: this.props.messages[0].usuario,
           mensaje: this.state.mensaje,
           createdAt: new Date().getTime()
@@ -57,26 +57,30 @@ class Chat extends Component{
 
 
         return(
-            <View>
+            <ScrollView>
+            <View style = {styles.container} >
                 <Text>
                 Pagina chat
                 </Text>
+                <Text>aqui recibe los mensajes</Text>
                 <View>
                     {list}
                 </View>
                 {/*comentario*/}
-                <TextInput
+                <Text>aqui envia los mensajes</Text>
+                <TextInput style = {styles.input}
                     placeholder = 'Mensaje'
                     onChangeText = {(text) => this.setState({mensaje: text})}
                     value = {this.state.mensaje}
                 />
 
-                <TouchableOpacity 
+                <TouchableOpacity style = {styles.button}
                             onPress ={() => this.insert()  }>
-                            <Text >ENVIAR</Text>
+                            <Text style = {styles.buttonText} >ENVIAR</Text>
                 </TouchableOpacity>
                 
             </View>
+            </ScrollView>
         );
     }
 }
@@ -91,3 +95,38 @@ export default withTracker(params => {
     };
   })(Chat);
   
+
+  const styles = StyleSheet.create({
+    container:{
+        flex: 1,
+
+    },
+
+    lista:{
+
+    },
+
+    input:{
+        margin:15,
+        marginLeft: 40,
+        borderBottomWidth: 3,
+        borderBottomColor: 'green',
+        width: 290,
+    },
+
+    button:{
+        flex: 3,
+        marginRight: 100,
+        marginLeft: 100,
+        alignItems: 'center',
+        borderColor: '#08ECD7',
+        borderBottomWidth: 5,
+        borderTopWidth: 5,
+        backgroundColor: '#08ECD7',
+    },
+
+    buttonText:{
+        color: '#000000',
+        fontSize: 24,
+    },
+});

@@ -10,6 +10,7 @@ import {
 import DatePicker from 'react-native-datepicker';
 //install npm i react-native-simple-radio-button --save
 import RadioForm, { RadioButton } from 'react-native-simple-radio-button';
+import Encabezado from './Encabezado.js';
 
 var Sexo = [
     {label: 'Femenino', value: 0 },
@@ -64,7 +65,7 @@ export default class RegistroUsuario extends Component{
         return(
             <ScrollView>
             <View style = {styles.container}>
-                
+                <Encabezado/>
                 <Text style = {styles.heading}> Registro </Text>
                     
                     <Text style = {styles.titulo}> Datos telefónicos </Text>
