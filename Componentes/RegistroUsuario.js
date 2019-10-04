@@ -155,6 +155,16 @@ export default class RegistroUsuario extends Component{
                             labelHorizontal={true}
                             onPress={(value) => {this.setState({value:value})}}
                         />
+                    <Text style = {styles.titulo}> Datos domicilio </Text>
+
+                    <Text style = {styles.label}> Codigo Postal </Text>
+                        <TextInput
+                            style = {styles.input}
+                            placeholder = '59874'
+                            keyboardType = 'numeric'
+                            onChangeText = {(text) => this.setState({CodigoPostal: text})}
+                            value = {this.state.CodigoPostal}
+                        />
 
                     <Text style = {styles.label}> Calle(s)</Text>
                         <TextInput
@@ -188,14 +198,7 @@ export default class RegistroUsuario extends Component{
                             value = {this.state.Colonia}
                         />
 
-                    <Text style = {styles.label}> Codigo Postal </Text>
-                        <TextInput
-                            style = {styles.input}
-                            placeholder = '59874'
-                            keyboardType = 'numeric'
-                            onChangeText = {(text) => this.setState({CodigoPostal: text})}
-                            value = {this.state.CodigoPostal}
-                        />
+
 
                     <CheckBox
                             style = {styles.checkBox}
@@ -249,7 +252,7 @@ const styles = StyleSheet.create({
     titulo:{
         fontSize: 28,
         justifyContent: 'center',
-        paddingLeft: 30,
+        paddingLeft: 15,
         margin: 5,
     },
 
@@ -261,9 +264,9 @@ const styles = StyleSheet.create({
     input:{
         margin:15,
         marginLeft: 40,
-        borderBottomWidth: 3,
-        borderBottomColor: 'green',
-        width: 290,
+        borderBottomWidth: 2,
+        borderBottomColor: '#803c3f',
+        width: 310,
     },
 
     buttonContainer: {
@@ -291,7 +294,8 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         paddingTop: 20,
         paddingBottom: 20,
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        borderColor : '#803c3f'
     },
 
     button:{
@@ -299,10 +303,10 @@ const styles = StyleSheet.create({
         marginRight: 100,
         marginLeft: 100,
         alignItems: 'center',
-        borderColor: '#08ECD7',
+        borderColor: '#803c3f',
         borderBottomWidth: 5,
         borderTopWidth: 5,
-        backgroundColor: '#08ECD7',
+        backgroundColor: '#803c3f',
     },
 
     buttonStyle:{
@@ -314,7 +318,7 @@ const styles = StyleSheet.create({
     },
 
     buttonText:{
-        color: '#000000',
+        color: '#ffffff',
         fontSize: 24,
     },
 

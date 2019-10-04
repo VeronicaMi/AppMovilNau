@@ -29,7 +29,6 @@ class EmergenciaMedicaView extends Component {
         return(
             <View style = {styles.container}>
                 
-                <Text>Hola cara de bola Medica</Text>
                 <OpcionEmergencia 
                 onPressChat={() => this.props.navigation.navigate('Chat')}
                 onPressCall={()=> this.onCall() }/>

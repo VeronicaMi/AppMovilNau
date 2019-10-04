@@ -29,7 +29,7 @@ export default class BotonPanico extends Component{
                  <Text style = {styles.label}> Emergencia Médica </Text>
 
                     <Picker 
-                            style = {styles.compañia}
+                            style = {styles.tipoEmergencia}
                             selectedValue = {this.state.MedicalEmer} onValueChange = {this.updateMedicalEmer}>
                             <Picker.Item label = 'Paro Cardiaco' value = 'paro cardiaco'/>
                             <Picker.Item label = 'Desmayo' value = 'desmayo'/>
@@ -40,7 +40,7 @@ export default class BotonPanico extends Component{
                     <Text style = {styles.label}> Emergencia Polícial </Text>
 
                     <Picker 
-                            style = {styles.compañia}
+                            style = {styles.tipoEmergencia}
                             selectedValue = {this.state.PolicialEmer} onValueChange = {this.updatePolicialEmer}>
                             <Picker.Item label = 'Robo' value = 'robo'/>
                             <Picker.Item label = 'Secuestro' value = 'secuestro'/>
@@ -51,7 +51,7 @@ export default class BotonPanico extends Component{
                     <Text style = {styles.label}> Emergencia Protección Cívil </Text>
 
                     <Picker 
-                            style = {styles.compañia}
+                            style = {styles.tipoEmergencia}
                             selectedValue = {this.state.ProtecCivilEmer} onValueChange = {this.updateProtecCivilEmer}>
                             <Picker.Item label = 'Incendio' value = 'incendio'/>
                             <Picker.Item label = 'Terremoto' value = 'terremoto'/>
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         
     },
 
-    compañia:{
+    tipoEmergencia:{
         
         marginLeft: 36,
         fontSize: 18,
@@ -99,10 +99,10 @@ const styles = StyleSheet.create({
         marginRight: 100,
         marginLeft: 100,
         alignItems: 'center',
-        borderColor: '#08ECD7',
+        borderColor: '#4dd2ff',
         borderBottomWidth: 5,
         borderTopWidth: 5,
-        backgroundColor: '#08ECD7',
+        backgroundColor: '#4dd2ff',
     },
 
     buttonStyle:{

@@ -60,7 +60,7 @@ const Home_StackNavigator = createStackNavigator({
       title: 'Inicio',
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#803c3f',
         shadowOpacity: 0,
         elevation: 0,
       },
@@ -77,7 +77,7 @@ const Panico_StackNavigator = createStackNavigator({
       title: 'Configuración botón de pánico',
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#803c3f',
         shadowOpacity: 0,
         elevation: 0,
       },
@@ -95,7 +95,7 @@ const EmerMedica_StackNavigator = createStackNavigator({
       title: 'Emergencia Médica',
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#803c3f',
         shadowOpacity: 0,
         elevation: 0,
       },
@@ -114,7 +114,7 @@ const EmerPolicial_StackNavigator = createStackNavigator({
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
 
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#803c3f',
       },
       headerTintColor: '#fff',
     }),
@@ -131,7 +131,7 @@ const EmerProCivil_StackNavigator = createStackNavigator({
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
 
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#803c3f',
       },
       headerTintColor: '#fff',
     }),
@@ -147,7 +147,7 @@ const DatosMedicos_StackNavigator = createStackNavigator({
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
 
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#803c3f',
       },
       headerTintColor: '#fff',
     }),
@@ -163,7 +163,7 @@ const Contactos_StackNavigator = createStackNavigator({
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
 
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#803c3f',
       },
       headerTintColor: '#fff',
     }),
@@ -179,7 +179,7 @@ const TerCon_StackNavigator = createStackNavigator({
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
 
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#803c3f',
       },
       headerTintColor: '#fff',
     }),
@@ -195,7 +195,7 @@ const Privacidad_StackNavigator = createStackNavigator({
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
 
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#803c3f',
       },
       headerTintColor: '#fff',
     }),

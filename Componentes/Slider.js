@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
     text: {
       color: '#FFFFFF',
       fontSize: 20,
+      justifyContent: 'center',
     },
     title: {
       fontSize: 28,
@@ -79,74 +80,93 @@ const styles = StyleSheet.create({
    
   const slides = [
     {
+      
       key: 's1',
-      text: 'Best Recharge offers',
-      title: 'Mobile Recharge',
+      text: 'Aplicación para el reporte de emergencias dentro del municipio de Naucalpan de Juaréz',
+      title: 'Bienvenida',
+      titleStyle: styles.title,
+      textStyle: styles.text,
+      image: {
+        uri: 'https://i.postimg.cc/x8ymhMYN/AppMovil.png',
+      },
+      imageStyle: styles.image,
+      backgroundColor: '#803c3f',
+    },
+    {
+      
+      key: 's2',
+      text: 'Debes completar el formulario para darte de alta en el sistema, no olvides aceptar los términos y condiciones',
+      title: 'Registro',
+      titleStyle: styles.title,
+      textStyle: styles.text,
+      image: {
+        uri: 'https://i.postimg.cc/GmTtVvb7/Registro.png',
+      },
+      imageStyle: styles.image,
+      backgroundColor: '#803c3f',
+    },
+    {
+      key: 's3',
+      text: 'Te llegara un codigo de confirmación vía SMS para corroborar tu identidad',
+      title: 'Confirmación',
       titleStyle: styles.title,
       textStyle: styles.text,
       image: {
         uri:
-          'https://aboutreact.com/wp-content/uploads/2018/08/mobile_recharge.png',
+          'https://i.postimg.cc/2SdR15Gj/SMS.png',
       },
       imageStyle: styles.image,
-      backgroundColor: '#20d2bb',
-    },
-    {
-      key: 's2',
-      title: 'Flight Booking',
-      titleStyle: styles.title,
-      text: 'Upto 25% off on Domestic Flights',
-      image: {
-        uri:
-          'https://aboutreact.com/wp-content/uploads/2018/08/flight_ticket_booking.png',
-      },
-      imageStyle: styles.image,
-      backgroundColor: '#febe29',
-    },
-    {
-      key: 's3',
-      title: 'Great Offers',
-      titleStyle: styles.title,
-      text: 'Enjoy Great offers on our all services',
-      image: {
-        uri: 'https://aboutreact.com/wp-content/uploads/2018/08/discount1.png',
-      },
-      imageStyle: styles.image,
-      backgroundColor: '#22bcb5',
+      backgroundColor: '#803c3f',
     },
     {
       key: 's4',
-      title: 'Best Deals',
+      title: 'Emergencias',
+      text: 'Ahora puedes reportar emergencias médicas, policiales y de protección civil ',
       titleStyle: styles.title,
-      text: ' Best Deals on all our services',
+      textStyle: styles.text,
       image: {
-        uri: 'https://aboutreact.com/wp-content/uploads/2018/08/best_deals1.png',
+        uri: 'https://i.postimg.cc/T2ZH66xR/Emergencia.png',
       },
       imageStyle: styles.image,
-      backgroundColor: '#3395ff',
+      backgroundColor: '#803c3f',
     },
     {
       key: 's5',
-      title: 'Bus Booking',
+      title: 'Llamada 911',
+      text: ' Comunicación con el 911 llamada de emergencia nacional',
       titleStyle: styles.title,
-      text: 'Enjoy Travelling on Bus with flat 100% off',
+      textStyle: styles.text,
       image: {
-        uri:
-          'https://aboutreact.com/wp-content/uploads/2018/08/bus_ticket_booking.png',
+        uri: 'https://i.postimg.cc/qB82NVnB/911.png',
       },
       imageStyle: styles.image,
-      backgroundColor: '#f6437b',
+      backgroundColor: '#803c3f',
     },
     {
       key: 's6',
-      title: 'Train Booking',
+      title: 'Comunicación de emergencias',
+      text: 'Atención personalizada mediante la comuicación por chat',
       titleStyle: styles.title,
-      text: ' 10% off on first Train booking',
+      textStyle: styles.text,
+      
       image: {
         uri:
-          'https://aboutreact.com/wp-content/uploads/2018/08/train_ticket_booking.png',
+          'https://i.postimg.cc/gcNkSgbq/Chat.png',
       },
       imageStyle: styles.image,
-      backgroundColor: '#febe29',
+      backgroundColor: '#803c3f',
+    },
+    {
+      key: 's7',
+      title: 'Botón de pánico',
+      text: 'Opción de botón de pánico para emergencias de suma importancia',
+      titleStyle: styles.title,
+      textStyle: styles.text,
+      image: {
+        uri:
+          'https://i.postimg.cc/63K5SSQz/Boton-Panico.png',
+      },
+      imageStyle: styles.image,
+      backgroundColor: '#803c3f',
     },
   ];

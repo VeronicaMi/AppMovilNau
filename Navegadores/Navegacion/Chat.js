@@ -18,7 +18,7 @@ import Meteor, {
 import { Ionicons } from '@expo/vector-icons';
 
 /** Connect to server.*/
-Meteor.connect("ws://192.168.43.14:3000/websocket");
+Meteor.connect("ws://192.168.2.5:3000/websocket");
 
 class Chat extends Component{
 
@@ -60,30 +60,11 @@ class Chat extends Component{
                      d.getSeconds()].join(':');
 
           return (
-          <View  key={index} 
-          style={{
-            alignSelf: 'flex-end',
-            margin: 4,
-            }}>
-            <View
-            style={{
-              flexDirection: 'row'}}>
-                
-                <Text 
-                style={{
-                  color: '#cfcfcf',
-                  padding: 5,
-                  fontSize: 10,
-                  }}>{dformat}</Text>
-
-              <Text 
-              style={{
-                backgroundColor:'#497580', 
-                borderRadius: 24,
-                color: '#fff',
-                padding: 5,
-                fontSize: 14,
-                }}>{body}</Text>
+          <View   key={index}
+                  style={ styles.dateView }>
+            <View style={{flexDirection: 'row'}}>
+                <Text style = {styles.dateText}>{dformat}</Text>
+                <Text style={styles.msnText}>{body}</Text>
             </View>
           </View>
           );
@@ -92,46 +73,24 @@ class Chat extends Component{
 
       return(
           <View style={{flex: 1, flexDirection: 'column'}}>
-            <View style={{
-                flex: 1}}>
-              
-            </View>
-              <View style={{
-                flex: 7, 
-                backgroundColor: '#fff',
-                alignSelf: 'flex-end',
-                justifyContent: 'flex-end',
-                paddingBottom: 10}} >
+            <View style={{flex: 1}}>
+          </View>
+              <View style={styles.msnTextVista} >
                   {list}
               </View>
               {/*comentario*/}
 
-              <View style={{
-                height: 55, 
-                backgroundColor: '#F7FEFF',
-                flexDirection: 'row',
-                }} >
+              <View style={styles.textInputContainer} >
                 
-                <TextInput
-                  style={{
-                    flex:8,
-                    backgroundColor: '#fff',
-                    margin: 10,
-                    borderRadius: 20
-                  }}
+                <TextInput style={styles.input}
                     placeholder = 'Mensaje'
                     onChangeText = {(text) => this.setState({mensaje: text})}
                     value = {this.state.mensaje}
                 />
 
-                <TouchableOpacity
-                style={{
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: 10
-                }}
-                onPress ={() => this.insert()  }>
-                            <Ionicons name="ios-send" size={32} color="#497580" />
+                <TouchableOpacity style={styles.icono}
+                                  onPress ={() => this.insert()  }>
+                    <Ionicons name="ios-send" size={32} color="#497580" />
                 </TouchableOpacity>
               </View>
               
@@ -150,3 +109,55 @@ export default withTracker(params => {
     };
   })(Chat);
   
+
+  const styles = StyleSheet.create({
+    dateView:{
+      alignSelf: 'flex-end',
+      margin: 4,
+    },
+      date: {
+
+      },
+      
+      dateText:{
+        color: '#cfcfcf',
+        padding: 5,
+        fontSize: 10,
+      },
+
+      msnText:{
+        backgroundColor:'#497580', 
+        borderRadius: 24,
+        color: '#fff',
+        padding: 5,
+        fontSize: 14,
+      },
+
+      msnTextVista:{
+        flex: 7, 
+        backgroundColor: '#fff',
+        alignSelf: 'flex-end',
+        justifyContent: 'flex-end',
+        paddingBottom: 10
+      },
+
+      textInputContainer:{
+        height: 55, 
+        backgroundColor: '#F7FEFF',
+        flexDirection: 'row',
+      },
+
+      input:{
+        flex:8,
+        backgroundColor: '#fff',
+        margin: 10,
+        borderRadius: 20
+      },
+
+      icono:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 10
+      },
+
+  });

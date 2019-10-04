@@ -49,16 +49,10 @@ export default class Home extends Component{
 
     render(){
         return(
-            <MapView style={{ alignSelf: 'stretch', height: 400 }}
-            region={this.state.mapRegion}
-            onRegionChange={this._handleMapRegionChange}>
-                <MapView.Marker
-                coordinate={this.state.marker.coords}
-                title="My Marker"
-                description="Some description"
-                />
-            </MapView>   
-
+          
+            
+          <Text > aqui debe ir mapa </Text>   
+            
         );
     }
 }
@@ -74,3 +68,14 @@ const styles = StyleSheet.create({
     },
 
 });
+
+/*
+            <MapView style={{ alignSelf: 'stretch', height: 400 }}
+            region={this.state.mapRegion}
+            onRegionChange={this._handleMapRegionChange}>
+                <MapView.Marker
+                coordinate={this.state.marker.coords}
+                title="My Marker"
+                description="Some description"
+                />
+          </MapView>*/
