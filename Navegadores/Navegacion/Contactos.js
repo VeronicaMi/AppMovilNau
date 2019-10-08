@@ -38,7 +38,7 @@ export default class Contactos extends Component {
                         <TouchableOpacity>
                             <Image
                                 style = {styles.imagePlus}
-                                source = {require('../ImageNav/anadir.png')}
+                                source = {{uri: 'https://i.postimg.cc/SxkSMdQM/Anadir.png'}}
                             />
                             <Text style = {styles.textPlus}>Añadir contacto</Text>
                         </TouchableOpacity>
@@ -73,15 +73,15 @@ export default class Contactos extends Component {
     label:{
         marginTop: 25,
         fontSize: 18,
-        paddingLeft: 40,
+        paddingLeft: 20,
     },
 
     input:{
-        margin:10,
-        marginLeft: 40,
-        borderBottomWidth: 3,
-        borderBottomColor: 'green',
-        width: 290,
+        margin:5,
+        marginLeft: 25,
+        borderBottomWidth: 2,
+        borderBottomColor: '#803c3f',
+        width: 310,
     },
     
     imagePlus:{
@@ -104,10 +104,10 @@ export default class Contactos extends Component {
         marginRight: 100,
         marginLeft: 100,
         alignItems: 'center',
-        borderColor: '#08ECD7',
+        borderColor: '#803c3f',
         borderBottomWidth: 5,
         borderTopWidth: 5,
-        backgroundColor: '#08ECD7',
+        backgroundColor: '#803c3f',
     },
 
     buttonStyle:{
@@ -119,7 +119,7 @@ export default class Contactos extends Component {
     },
 
     buttonText:{
-        color: '#000000',
+        color: '#ffffff',
         fontSize: 24,
     },
 });

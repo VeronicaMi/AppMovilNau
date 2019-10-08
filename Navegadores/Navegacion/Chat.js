@@ -143,7 +143,7 @@ export default withTracker(params => {
 
       textInputContainer:{
         height: 55, 
-        backgroundColor: '#F7FEFF',
+        backgroundColor: '#803c3f',
         flexDirection: 'row',
       },
 

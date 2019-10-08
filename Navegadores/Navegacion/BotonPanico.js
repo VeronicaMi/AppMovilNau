@@ -31,9 +31,11 @@ export default class BotonPanico extends Component{
                     <Picker 
                             style = {styles.tipoEmergencia}
                             selectedValue = {this.state.MedicalEmer} onValueChange = {this.updateMedicalEmer}>
-                            <Picker.Item label = 'Paro Cardiaco' value = 'paro cardiaco'/>
-                            <Picker.Item label = 'Desmayo' value = 'desmayo'/>
-                            <Picker.Item label = 'Convulsiones' value = 'convulsiones'/>
+                            <Picker.Item label = 'Accidente de coche con heridos' value = 'accidenteCoche'/>
+                            <Picker.Item label = 'Electrocutado' value = 'electrocutado'/>
+                            <Picker.Item label = 'Infarto' value = 'infarto'/>
+                            <Picker.Item label = 'Sobredosis' value = 'sobredosis'/>
+                            <Picker.Item label = 'Trabajo de parto' value = 'parto'/>
                             <Picker.Item label = 'Ahogado' value = 'ahogado'/>
                     </Picker>
 
@@ -44,8 +46,11 @@ export default class BotonPanico extends Component{
                             selectedValue = {this.state.PolicialEmer} onValueChange = {this.updatePolicialEmer}>
                             <Picker.Item label = 'Robo' value = 'robo'/>
                             <Picker.Item label = 'Secuestro' value = 'secuestro'/>
-                            <Picker.Item label = 'Accidente transito' value = 'accidente transito'/>
-                            <Picker.Item label = 'Violencia fisica' value = 'violencia fisica'/>
+                            <Picker.Item label = 'Disparo de arma' value = 'disparo'/>
+                            <Picker.Item label = 'Violencia Familiar' value = 'violenciaFamiliar'/>
+                            <Picker.Item label = 'Abuso sexual' value = 'abusoSexual'/>
+                            <Picker.Item label = 'Homicidio' value = 'homicidio'/>
+                            <Picker.Item label = 'Allanamiento de morada' value = 'allanamientoMorada'/>
                     </Picker>
 
                     <Text style = {styles.label}> Emergencia Protección Cívil </Text>
@@ -54,9 +59,11 @@ export default class BotonPanico extends Component{
                             style = {styles.tipoEmergencia}
                             selectedValue = {this.state.ProtecCivilEmer} onValueChange = {this.updateProtecCivilEmer}>
                             <Picker.Item label = 'Incendio' value = 'incendio'/>
-                            <Picker.Item label = 'Terremoto' value = 'terremoto'/>
-                            <Picker.Item label = 'Tormenta' value = 'Tormenta'/>
-                            <Picker.Item label = 'Inundacion' value = 'inundacion'/>
+                            <Picker.Item label = 'Explosión' value = 'explosion'/>
+                            <Picker.Item label = 'Derrumbe' value = 'derrumbe'/>
+                            <Picker.Item label = 'Inundación' value = 'inundacion'/>
+                            <Picker.Item label = 'Erupción Volcánica' value = 'erupcionVolcanica'/>
+                            <Picker.Item label = 'Enjambre de abejas' value = 'enjambreAbejas'/>
                     </Picker>
 
                     <View style = {styles.button}>
@@ -81,7 +88,6 @@ const styles = StyleSheet.create({
     },
 
     tipoEmergencia:{
-        
         marginLeft: 36,
         fontSize: 18,
         
@@ -89,8 +95,9 @@ const styles = StyleSheet.create({
 
     label:{
         marginTop: 25,
+        fontWeight: 'bold',
         fontSize: 18,
-        paddingLeft: 40,
+        paddingLeft: 20,
     },
 
     button:{
@@ -99,10 +106,10 @@ const styles = StyleSheet.create({
         marginRight: 100,
         marginLeft: 100,
         alignItems: 'center',
-        borderColor: '#4dd2ff',
+        borderColor: '#803c3f',
         borderBottomWidth: 5,
         borderTopWidth: 5,
-        backgroundColor: '#4dd2ff',
+        backgroundColor: '#803c3f',
     },
 
     buttonStyle:{
@@ -114,7 +121,7 @@ const styles = StyleSheet.create({
     },
 
     buttonText:{
-        color: '#000000',
+        color: '#ffffff',
         fontSize: 24,
     },
 });

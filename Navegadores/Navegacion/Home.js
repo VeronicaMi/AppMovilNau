@@ -3,16 +3,17 @@ import {
     StyleSheet, Text, View, TextInput,
     TouchableOpacity, Button, Alert,
     Picker, AsyncStorage, ScrollView,
-    CheckBox
+    CheckBox, Image
 } from 'react-native';
 //expo install react-native-maps
-import MapView, { Marker } from 'react-native-maps';
+//import MapView, { Marker } from 'react-native-maps';
 //expo install expo-location
-import * as Location from 'expo-location';
+//import * as Location from 'expo-location';
 //expo install expo-permissions
-import * as Permissions from 'expo-permissions';
+//import * as Permissions from 'expo-permissions';
 //expo install expo-constants
 //import {Constants, MapView, Location, Permissions} from 'expo';
+import call from 'react-native-phone-call';
 
 export default class Home extends Component{
     state = {
@@ -47,20 +48,84 @@ export default class Home extends Component{
     });
   };
 
+  onCall(){
+    const args = {
+        number: '911', // String value with the number to call
+        prompt: false // Optional boolean property. Determines if the user should be prompt prior to the call 
+      };
+
+    call(args).catch(console.error);
+};
     render(){
         return(
-          
+          <ScrollView>
+          <View style = {styles.container}>
             
-          <Text > aqui debe ir mapa </Text>   
-            
+
+                <View style = {styles.contIcon}>
+                      <TouchableOpacity 
+                      onPress = {() => this.onCall()}>
+                        <Image
+                            style = {styles.imagePhone}
+                            source = {{uri: 'https://i.postimg.cc/xTqySGVL/call.png'}}
+
+                        />
+                        <Text style = {styles.textPhone}>Llamar al 911</Text>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity 
+                      onPress = {() => alert('presionaste una vez')}>
+                        <Image
+                            style = {styles.imageButton}
+                            source = {{uri: 'https://i.postimg.cc/wT1gpq54/Boton-Panico2.png'}}
+
+                        />
+                        <Text style = {styles.textButton}>Botón de pánico</Text>
+                      </TouchableOpacity>
+                </View>
+            </View>
+            </ScrollView>
         );
     }
 }
 
+
+
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-      },
+  container:{
+    flex: 1,
+    flexDirection: 'column'
+
+},
+
+contIcon:{
+    flex: 1,
+    flexDirection: 'row',
+    
+},
+
+    imagePhone:{
+      marginTop: 69,
+      marginLeft: 30,
+        height: 100,
+        width: 100,
+    },
+    textPhone:{
+      marginLeft: 30,
+      fontSize: 20,
+  },
+
+    imageButton:{
+      marginTop: 28,
+      marginLeft: 60,
+      height: 140,
+      width: 140,
+  },
+
+  textButton:{
+    marginLeft: 60,
+    fontSize: 20,
+  },
 
     texto:{
         flex: 1,
@@ -69,8 +134,7 @@ const styles = StyleSheet.create({
 
 });
 
-/*
-            <MapView style={{ alignSelf: 'stretch', height: 400 }}
+/*<MapView style={{ alignSelf: 'stretch', height: 400, margin: 15 }}
             region={this.state.mapRegion}
             onRegionChange={this._handleMapRegionChange}>
                 <MapView.Marker
@@ -78,4 +142,4 @@ const styles = StyleSheet.create({
                 title="My Marker"
                 description="Some description"
                 />
-          </MapView>*/
+            </MapView>*/

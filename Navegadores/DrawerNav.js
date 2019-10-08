@@ -14,9 +14,11 @@ import {
 import {
   createDrawerNavigator,
   createStackNavigator,
-  createAppContainer
+  createAppContainer,
+  DrawerItems
 } from 'react-navigation';
-
+//npm install native-base
+import {Container, Content, Header, Left, Body, Icon  } from 'native-base';
 //Import all the screens for Drawer/ Sidebar
 import Home from './Navegacion/Home.js';
 import BotonPanico from './Navegacion/BotonPanico.js';
@@ -202,6 +204,25 @@ const Privacidad_StackNavigator = createStackNavigator({
   },
 });
 
+const CustomDrawerContentComponent = (props) => (
+    <Container>
+        <Header style = {{height: 170, backgroundColor: 'white'}}>
+            <Body>
+                <Image 
+                      style = {{ width:260, height:70,}}
+                      source = {{uri: 'https://i.postimg.cc/hjp4WKjM/Logo-Naucalpan.png'}}
+                />
+                <Text style = {{textAlign: 'center', fontSize:16, fontWeight: 'bold', }}>Usuario Nombre</Text>
+            </Body>
+        </Header>
+          <Content>
+            <DrawerItems{...props}/>
+          </Content>
+    </Container>
+    
+  
+)
+
 //Drawer Navigator for the Navigation Drawer / Sidebar
 const DrawerNavigatorExample = createDrawerNavigator({
   //Drawer Optons and indexing
@@ -272,7 +293,11 @@ const DrawerNavigatorExample = createDrawerNavigator({
         drawerLabel: 'Aviso de privacidad',
       },
     },
-
+  },
+  {
+    initialRouteName: 'Home',
+    contentComponent: CustomDrawerContentComponent,
+    
 });
 
 

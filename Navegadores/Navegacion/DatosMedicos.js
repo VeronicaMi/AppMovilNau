@@ -37,7 +37,7 @@ export default class DatosMedicos extends Component{
         return(
             <ScrollView>
                 <View style = {styles.container}>
-                    <Text style = {styles.label}> Grupo Sanguineo </Text>
+                    <Text style = {styles.label}> Grupo Sanguíneo </Text>
                         <TextInput
                             style = {styles.input}
                             placeholder = 'O +'
@@ -53,7 +53,7 @@ export default class DatosMedicos extends Component{
                             value = {this.state.Alergias}
                         />
 
-                    <Text style = {styles.label}> Enfermedad Cronica </Text>
+                    <Text style = {styles.label}> Enfermedad Crónica </Text>
                         <TextInput
                             style = {styles.input}
                             placeholder = 'Diabetes'
@@ -95,7 +95,7 @@ export default class DatosMedicos extends Component{
                             value = {this.state.Talla}
                         />
 
-                    <Text style = {styles.label}> Donante de Organos </Text>
+                    <Text style = {styles.label}> Donante de Órganos </Text>
                         <RadioForm
                             style={styles.donante}
                             radio_props={DonanteOrganos}
@@ -135,15 +135,15 @@ const styles = StyleSheet.create({
     label:{
         marginTop: 25,
         fontSize: 18,
-        paddingLeft: 40,
+        paddingLeft: 20,
     },
 
     input:{
-        margin:10,
-        marginLeft: 40,
-        borderBottomWidth: 3,
-        borderBottomColor: 'green',
-        width: 290,
+        margin:5,
+        marginLeft: 25,
+        borderBottomWidth: 2,
+        borderBottomColor: '#803c3f',
+        width: 310,
     },
 
     donante:{
@@ -159,10 +159,10 @@ const styles = StyleSheet.create({
         marginRight: 100,
         marginLeft: 100,
         alignItems: 'center',
-        borderColor: '#08ECD7',
+        borderColor: '#803c3f',
         borderBottomWidth: 5,
         borderTopWidth: 5,
-        backgroundColor: '#08ECD7',
+        backgroundColor: '#803c3f',
     },
 
     buttonStyle:{
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     },
 
     buttonText:{
-        color: '#000000',
+        color: '#ffffff',
         fontSize: 24,
     },
 });

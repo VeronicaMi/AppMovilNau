@@ -25,25 +25,31 @@ export default class RegistroUsuario extends Component{
     constructor(props){
         super(props);
         this.state = {
-            NumeroCelular: '',
-            Nombre: '',
-            ApellidoPaterno: '',
-            ApellidoMaterno: '',
-            Email: '',
-            ConfirEmail: '',
-            FechaNacimiento: new Date(),
-            Calle: '',
-            NoExterior: '',
-            NoInterior: '',
-            Colonia: '',
-            CodigoPostal: '',
+            usuario:{
+                numeroTelefono: '', 
+                compania: '',
+                nombre: '',
+                apellidoPaterno: '',
+                apellidoMaterno: '',
+                correoElectronico: '',
+                fechaNacimento: new Date(),
+                sexo: '',
+                calle: '',
+                noExterior: '',
+                noInterior: '',
+                colonia: '',
+                codigoPostal: '',
+            },
+           
+            confirCorreo: '',
             check: false,
         };
     };
 
-    state = { CompañiaCelular: '' }
-    updateCompañia = (CompañiaCelular) => {
-        this.setState({CompañiaCelular: CompañiaCelular})
+    updateCompania = (compania) => {
+        const usuario = this.state.usuario;
+        usuario.compania = compania;
+        this.setState({...this.state, usuario});
     }
 
     checkBoxTest(){
@@ -52,12 +58,6 @@ export default class RegistroUsuario extends Component{
         })
     }
 
-    confirmaEmail = () => {
-        if ( this.state.Email !== this.state.ConfirEmail){
-            Alert.alert('El correo no coincide')
-            
-        }
-    }
 
     abreNav = () => {this.props.navigation.navigate('DrawerNav')}
 
@@ -70,60 +70,83 @@ export default class RegistroUsuario extends Component{
                     
                     <Text style = {styles.titulo}> Datos telefónicos </Text>
                     <Text style = {styles.label}> Numero de Celular </Text>
-                        <TextInput
+                    <TextInput
                             style = {styles.input}
                             placeholder = '5528980930'
                             keyboardType = 'numeric'
-                            onChangeText = {(text) => this.setState({NumeroCelular: text})}
-                            value = {this.state.NumeroCelular}
+                            onChangeText = {(text) => {
+                                const usuario = this.state.usuario;
+                                usuario.numeroTelefono = text;
+                                this.setState({...this.state, usuario});
+                            }}
+                            value = {this.state.usuario.numeroTelefono}
                         />
-                    
+
                     <Picker 
-                        style = {styles.compañia}
-                        selectedValue = {this.state.CompañiaCelular} onValueChange = {this.updateCompañia}>
+                        style = {styles.compania}
+                        selectedValue = {this.state.usuario.compania} 
+                        onValueChange = {()=> this.updateCompania(this.state.usuario.compania)}>
                         <Picker.Item label = 'Telcel' value = 'telcel'/>
                         <Picker.Item label = 'Movistar' value = 'movistar'/>
                         <Picker.Item label = 'ATYT' value = 'aTYT'/>
                         <Picker.Item label = 'Unefon' value = 'unefon'/>
                     </Picker>
 
+
+
                     <Text style = {styles.titulo}> Datos personales </Text>
                     <Text style = {styles.label}> Nombre(s)</Text>
                         <TextInput
                             style = {styles.input}
                             placeholder = 'Veronica'
-                            onChangeText = {(text) => this.setState({Nombre: text})}
-                            value = {this.state.Nombre}
+                            onChangeText = {(text) => {
+                                const usuario = this.state.usuario;
+                                usuario.nombre = text;
+                                this.setState({...this.state, usuario});
+                            }}
+                            value = {this.state.usuario.nombre}
                         />
                     <Text style = {styles.label}> Apellido Paterno</Text>
                         <TextInput
                             style = {styles.input}
                             placeholder = 'Miranda'
-                            onChangeText = {(text) => this.setState({ApellidoPaterno: text})}
-                            value = {this.state.ApellidoPaterno}
+                            onChangeText = {(text) => {
+                                const usuario = this.state.usuario;
+                                usuario.apellidoPaterno = text;
+                                this.setState({...this.state, usuario});
+                            }}
+                            value = {this.state.usuario.apellidoPaterno}
                         />
                     <Text style = {styles.label}> Apellido Materno</Text>
                         <TextInput
                             style = {styles.input}
                             placeholder = 'Ramirez'
-                            onChangeText = {(text) => this.setState({ApellidoMaterno: text})}
-                            value = {this.state.ApellidoMaterno}
+                            onChangeText = {(text) => {
+                                const usuario = this.state.usuario;
+                                usuario.apellidoMaterno = text;
+                                this.setState({...this.state, usuario});
+                            }}
+                            value = {this.state.usuario.apellidoMaterno}
                         />
                     <Text style = {styles.label}> Correo electronico</Text>
                         <TextInput
                             style = {styles.input}
                             placeholder = 'veronica@escom.mx'
-                            onChangeText = {(text) => this.setState({Email: text})}
-                            value = {this.state.Email}
+                            onChangeText = {(text) => {
+                                const usuario = this.state.usuario;
+                                usuario.correoElectronico = text;
+                                this.setState({...this.state, usuario});
+                            }}
+                            value = {this.state.usuario.correoElectronico}
                         />
                     <Text style = {styles.label}> Confirma tu correo electronico</Text>
                         <TextInput
                             style = {styles.input}
                             placeholder = 'veronica@escom.mx'
-                            onChangeText = {(text) => this.setState({ConfirEmail: text})}
-                            value = {this.state.ConfirEmail}
+                            onChangeText = {(text) => this.setState({confirCorreo: text})}
+                            value = {this.state.confirCorreo}
                         />
-                    
+
                     <Text style = {styles.label}> Ingresa tu fecha de nacimiento</Text>
                         <DatePicker
                             style={styles.calendario}
@@ -143,62 +166,88 @@ export default class RegistroUsuario extends Component{
                                 //marginLeft: 5
                                 //},
                             }}
-                            onDateChange={(date) => {this.setState({FechaNacimiento: date})}}
+                            onDateChange={(date) => {
+                                const usuario = this.state.usuario;
+                                usuario.fechaNacimento = date;
+                                this.setState({...this.state, usuario})}}
                         />
 
-                    <Text style = {styles.label}> Sexo </Text>
+                <Text style = {styles.label}> Sexo </Text>
                         <RadioForm
                             style={styles.sexo}
                             radio_props={Sexo}
                             initial={0}
                             formHorizontal={true}
                             labelHorizontal={true}
-                            onPress={(value) => {this.setState({value:value})}}
-                        />
-                    <Text style = {styles.titulo}> Datos domicilio </Text>
-
-                    <Text style = {styles.label}> Codigo Postal </Text>
-                        <TextInput
-                            style = {styles.input}
-                            placeholder = '59874'
-                            keyboardType = 'numeric'
-                            onChangeText = {(text) => this.setState({CodigoPostal: text})}
-                            value = {this.state.CodigoPostal}
+                            onPress={(value) => {
+                                const usuario = this.state.usuario;
+                                usuario.sexo = value;
+                                this.setState({...this.state, usuario})
+                            }}
                         />
 
-                    <Text style = {styles.label}> Calle(s)</Text>
-                        <TextInput
-                            style = {styles.input}
-                            placeholder = 'San Pedro'
-                            onChangeText = {(text) => this.setState({Calle: text})}
-                            value = {this.state.Calle}
-                        />
+<Text style = {styles.titulo}> Datos domicilio </Text>
 
-                    <Text style = {styles.label}> No. Exterior</Text>
-                        <TextInput
-                            style = {styles.input}
-                            placeholder = '36'
-                            onChangeText = {(text) => this.setState({NoExterior: text})}
-                            value = {this.state.NoExterior}
-                        />
+<Text style = {styles.label}> Codigo Postal </Text>
+    <TextInput
+        style = {styles.input}
+        placeholder = '59874'
+        keyboardType = 'numeric'
+        onChangeText = {(text) => {
+            const usuario = this.state.usuario;
+            usuario.codigoPostal = text;
+            this.setState({...this.state, usuario});
+        }}
+        value = {this.state.usuario.codigoPostal}
+    />
 
-                    <Text style = {styles.label}> No. Interior</Text>
-                        <TextInput
-                            style = {styles.input}
-                            placeholder = '4-A'
-                            onChangeText = {(text) => this.setState({NoInterior: text})}
-                            value = {this.state.NoInterior}
-                        />
+<Text style = {styles.label}> Calle(s)</Text>
+    <TextInput
+        style = {styles.input}
+        placeholder = 'San Pedro'
+        onChangeText = {(text) => {
+            const usuario = this.state.usuario;
+            usuario.calle = text;
+            this.setState({...this.state, usuario});
+        }}
+        value = {this.state.usuario.calle}
+    />
 
-                    <Text style = {styles.label}> Colonia </Text>
-                        <TextInput
-                            style = {styles.input}
-                            placeholder = 'Anzures'
-                            onChangeText = {(text) => this.setState({Colonia: text})}
-                            value = {this.state.Colonia}
-                        />
+<Text style = {styles.label}> No. Exterior</Text>
+    <TextInput
+        style = {styles.input}
+        placeholder = '36'
+        onChangeText = {(text) => {
+            const usuario = this.state.usuario;
+            usuario.noExterior = text;
+            this.setState({...this.state, usuario});
+        }}
+        value = {this.state.usuario.noExterior}
+    />
 
+<Text style = {styles.label}> No. Interior</Text>
+    <TextInput
+        style = {styles.input}
+        placeholder = '4-A'
+        onChangeText = {(text) => {
+            const usuario = this.state.usuario;
+            usuario.noInterior = text;
+            this.setState({...this.state, usuario});
+        }}
+        value = {this.state.usuario.noInterior}
+    />
 
+<Text style = {styles.label}> Colonia </Text>
+    <TextInput
+        style = {styles.input}
+        placeholder = 'Anzures'
+        onChangeText = {(text) => {
+            const usuario = this.state.usuario;
+            usuario.colonia = text;
+            this.setState({...this.state, usuario});
+        }}
+        value = {this.state.usuario.colonia}
+    />
 
                     <CheckBox
                             style = {styles.checkBox}
@@ -223,7 +272,7 @@ export default class RegistroUsuario extends Component{
 
                     <View style = {styles.button}>
                         <TouchableOpacity style = {styles.buttonStyle} 
-                            onPress={() => {this.confirmaEmail(); this.abreNav();}}>
+                            onPress={() => { this.abreNav();}}>
                             <Text style = {styles.buttonText}>ENVIAR</Text>
                         </TouchableOpacity>
                     </View>
@@ -277,7 +326,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#2196F3'
     },
 
-    compañia:{
+    compania:{
         marginLeft: 36,
         fontSize: 18,
         
